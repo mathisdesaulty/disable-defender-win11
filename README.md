@@ -22,9 +22,6 @@ Windows protects Defender's core services with Tamper Protection and PPL (Protec
 
 ## How to use
 
-![alt text](image.png)
-
-
 1. Manually turn off **Tamper Protection** first (Windows Security > Virus & threat protection > Manage settings). Nothing else works until this is off.
 2. Run `1-disable-defender-gpo-tasks-en.ps1` as Administrator, in normal boot mode.
 3. Reboot into **Safe Mode** (`msconfig` > Boot tab > Safe boot > Minimal).
