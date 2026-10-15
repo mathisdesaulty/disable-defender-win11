@@ -12,6 +12,7 @@ Windows protects Defender's core services with Tamper Protection and PPL (Protec
 
 ## Files
 
+
 | Order | Script | Run in | Purpose |
 |---|---|---|---|
 | — | `0-check-defender-status-en.ps1` | Normal mode, any time | Read-only checkup: Tamper Protection, real-time protection, service states, GPO keys, scheduled tasks |
@@ -21,8 +22,10 @@ Windows protects Defender's core services with Tamper Protection and PPL (Protec
 
 ## How to use
 
-1. Manually turn off **Tamper Protection** first (Windows Security > Virus & threat
-   protection > Manage settings). Nothing else works until this is off.
+![alt text](image.png)
+
+
+1. Manually turn off **Tamper Protection** first (Windows Security > Virus & threat protection > Manage settings). Nothing else works until this is off.
 2. Run `1-disable-defender-gpo-tasks-en.ps1` as Administrator, in normal boot mode.
 3. Reboot into **Safe Mode** (`msconfig` > Boot tab > Safe boot > Minimal).
 4. Run `2-disable-defender-services-en.ps1` as Administrator.
