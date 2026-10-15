@@ -10,7 +10,7 @@
 .NOTES
     - Prerequisite: Tamper Protection already disabled (otherwise silently ignored).
     - After running: exit Safe Mode (msconfig, uncheck Safe boot) then reboot normally.
-    - To revert, use 3-restore-defender-services-en.ps1.
+    - To revert, use 3-restore-defender-services.ps1.
 #>
 
 #Requires -RunAsAdministrator

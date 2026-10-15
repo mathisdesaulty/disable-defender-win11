@@ -15,21 +15,21 @@ Windows protects Defender's core services with Tamper Protection and PPL (Protec
 
 | Order | Script | Run in | Purpose |
 |---|---|---|---|
-| — | `0-check-defender-status-en.ps1` | Normal mode, any time | Read-only checkup: Tamper Protection, real-time protection, service states, GPO keys, scheduled tasks |
-| 1 | `1-disable-defender-gpo-tasks-en.ps1` | Normal mode | Applies GPO-equivalent registry keys + disables Defender's 4 scheduled tasks |
-| 2 | `2-disable-defender-services-en.ps1` | **Safe Mode only** | Sets Defender's services/drivers (`WinDefend`, `WdFilter`, etc.) to disabled — fails outside Safe Mode |
-| 3 | `3-restore-defender-services-en.ps1` | **Safe Mode** (for services) | Reverts everything: restores services, removes GPO keys, re-enables tasks |
+| — | `0-check-defender-status.ps1` | Normal mode, any time | Read-only checkup: Tamper Protection, real-time protection, service states, GPO keys, scheduled tasks |
+| 1 | `1-disable-defender-gpo-tasks.ps1` | Normal mode | Applies GPO-equivalent registry keys + disables Defender's 4 scheduled tasks |
+| 2 | `2-disable-defender-services.ps1` | **Safe Mode only** | Sets Defender's services/drivers (`WinDefend`, `WdFilter`, etc.) to disabled — fails outside Safe Mode |
+| 3 | `3-restore-defender-services.ps1` | **Safe Mode** (for services) | Reverts everything: restores services, removes GPO keys, re-enables tasks |
 
 ## How to use
 
 1. Manually turn off **Tamper Protection** first (Windows Security > Virus & threat protection > Manage settings). Nothing else works until this is off.
-2. Run `1-disable-defender-gpo-tasks-en.ps1` as Administrator, in normal boot mode.
+2. Run `1-disable-defender-gpo-tasks.ps1` as Administrator, in normal boot mode.
 3. Reboot into **Safe Mode** (`msconfig` > Boot tab > Safe boot > Minimal).
-4. Run `2-disable-defender-services-en.ps1` as Administrator.
+4. Run `2-disable-defender-services.ps1` as Administrator.
 5. Uncheck Safe boot in `msconfig`, reboot normally.
-6. Run `0-check-defender-status-en.ps1` any time to confirm the current state.
+6. Run `0-check-defender-status.ps1` any time to confirm the current state.
 
-To undo everything, run `3-restore-defender-services-en.ps1` (reboot into Safe Mode for the services part), then manually re-enable Tamper Protection and real-time protection in Windows Security.
+To undo everything, run `3-restore-defender-services.ps1` (reboot into Safe Mode for the services part), then manually re-enable Tamper Protection and real-time protection in Windows Security.
 
 ## Important caveat
 

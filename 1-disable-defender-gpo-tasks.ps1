@@ -75,4 +75,4 @@ foreach ($name in $taskNames) {
 
 Write-Host "`n=== Part 1 complete ===" -ForegroundColor Cyan
 Write-Host "Next step: reboot into SAFE MODE (msconfig > Boot > Safe boot > Minimal)"
-Write-Host "then run 2-disable-defender-services-en.ps1"
+Write-Host "then run 2-disable-defender-services.ps1"
